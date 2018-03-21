@@ -1,6 +1,5 @@
-const express = require('express');
-const graphql = require('graphql');
-const graphqlHTTP = require('express-graphql');
+const express = require("express");
+const graphql = require("graphql");
 
 const app = express();
 
@@ -14,14 +13,10 @@ const schema = graphql.buildSchema(`
 // The root provides a resolver function for each API endpoint
 const rootValue = {
   hello: () => {
-    return 'Hello world!';
-  },
+    return "Hello world!";
+  }
 };
 
-app.use('/graphql', graphqlHTTP({
-  schema,
-  rootValue,
-  graphiql: true
-}));
+app.use("/graphql", require("./routes/graphql")(schema, rootValue));
 
 app.listen(process.env.PORT || 4000);

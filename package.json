@@ -12,6 +12,7 @@
   "dependencies": {
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",
-    "graphql": "^0.13.2"
+    "graphql": "^0.13.2",
+    "ravendb": "^4.0.0-rc3"
   }
 }
