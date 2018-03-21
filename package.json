@@ -2,13 +2,15 @@
   "name": "sample-ravendb-node-graphql",
   "version": "1.0.0",
   "description": "RavenDB 4, Node.js, and GraphQL sample app",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.3",
     "express-graphql": "^0.6.12",
     "graphql": "^0.13.2"
   }
