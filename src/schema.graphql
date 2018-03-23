@@ -1,0 +1,15 @@
+type Queries {
+  talks(offset: Int = 0, amount: Int = 128): [Talk]
+}
+
+type Talk {
+  id: ID!
+  title: String!
+  abstract: String!
+  speaker: Speaker!
+}
+
+type Speaker {
+  id: ID!
+  name: String!
+}
