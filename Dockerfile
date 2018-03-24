@@ -7,5 +7,5 @@ RUN npm i -s --no-progress --production
 ENV NODE_ENV=production
 ENV PORT=80
 
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "start:server" ]
 EXPOSE 80

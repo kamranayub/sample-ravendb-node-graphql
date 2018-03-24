@@ -5,7 +5,8 @@
   "description": "RavenDB 4, Node.js, and GraphQL sample app",
   "main": "src/index.js",
   "scripts": {
-    "start": "docker compose up",
+    "start": "docker-compose up",
+    "start:server": "node ./src/index.js",
     "build": "docker build -t sample-ravendb-node-graphql ."
   },
   "author": "",
