@@ -4,9 +4,8 @@
   "description": "RavenDB 4, Node.js, and GraphQL sample app",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "build": "docker build -t sample-ravendb-node-graphql .",
-    "docker": "docker run -p 4000:80 sample-ravendb-node-graphql"
+    "start": "docker compose up",
+    "build": "docker build -t sample-ravendb-node-graphql ."
   },
   "author": "",
   "license": "ISC",
@@ -15,11 +14,9 @@
     "async-retry": "^1.2.1",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
-    "express-graphql": "^0.6.12",
     "graphql": "^0.13.2",
     "graphql-tools": "^2.23.1",
     "ravendb": "^4.0.0-rc3",
-    "request": "^2.85.0",
     "request-promise": "^4.2.2"
   }
 }
