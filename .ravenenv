@@ -1,0 +1,3 @@
+RAVEN_ARGS="--Setup.Mode=None"
+RAVEN_PublicServerUrl=http://ravendb:8080
+RAVEN_Security_UnsecuredAccessAllowed=PublicNetwork

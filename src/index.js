@@ -4,8 +4,10 @@ const path = require("path");
 const fs = require("fs");
 const express = require("express");
 const bodyParser = require("body-parser");
+const retry = require("async-retry");
 const { graphqlExpress, graphiqlExpress } = require("apollo-server-express");
 const { makeExecutableSchema } = require("graphql-tools");
+const request = require("request-promise");
 const resolvers = require("./resolvers");
 const db = require("./db");
 
@@ -47,6 +49,20 @@ const port = process.env.PORT || 4000;
 
 app.listen(port, async () => {
   console.log(`Listening on port ${port}...`);
+
+  // Wait for interface to boot up
+  await retry(async (bail, retries) => {
+    const res = await request(`${process.env.DATABASE_URL}/studio/index.html`);
+
+    if (res) {
+      return;
+    } else {
+      console.log(`Could not connect to studio interface, attempt ${retries}`, res)
+      throw new Error(
+        "Cannot connect to Raven server"
+      );
+    }
+  });
 
   // Create database if it doesn't exist
   console.info("Creating database if it doesn't exist...");
