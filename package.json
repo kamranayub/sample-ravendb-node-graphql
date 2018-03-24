@@ -1,6 +1,7 @@
 {
   "name": "sample-ravendb-node-graphql",
   "version": "1.0.0",
+  "private": true,
   "description": "RavenDB 4, Node.js, and GraphQL sample app",
   "main": "src/index.js",
   "scripts": {
